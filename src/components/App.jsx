@@ -17,12 +17,6 @@ function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (errorMessage) {
-      alert('Error, ' + errorMessage);
-    }
-  }, [errorMessage]);
-
     return (
       <Container>
         <h1>Phonebook</h1>
