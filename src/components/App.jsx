@@ -4,14 +4,13 @@ import ContactList from './ContactList/ContactList';
 import Container from './Container/Container';
 import ContactFilter from './ContactFilter/ContactFilter';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts, getIsLoading, getErrorMessage } from 'redux/selectors';
+import { selectContacts, getIsLoading} from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 
 function App() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(getIsLoading);
-  const errorMessage = useSelector(getErrorMessage);
   
   useEffect(() => {
     dispatch(fetchContacts());
